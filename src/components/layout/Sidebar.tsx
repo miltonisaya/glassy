@@ -1,11 +1,13 @@
-import { Home, BarChart2, FileText, Settings, Users } from 'lucide-react'
+import { Home, MapPin, CalendarDays, Users, Star, BarChart2, Settings } from 'lucide-react'
 
 const NAV_ITEMS = [
-  { icon: Home, label: 'Dashboard' },
-  { icon: BarChart2, label: 'Analytics' },
-  { icon: Users, label: 'Farmers' },
-  { icon: FileText, label: 'Reports' },
-  { icon: Settings, label: 'Settings' },
+  { icon: Home,         label: 'Overview' },
+  { icon: MapPin,       label: 'My Activities' },
+  { icon: CalendarDays, label: 'Bookings' },
+  { icon: Users,        label: 'Travelers' },
+  { icon: Star,         label: 'Reviews' },
+  { icon: BarChart2,    label: 'Analytics' },
+  { icon: Settings,     label: 'Settings' },
 ]
 
 interface SidebarProps {
@@ -15,10 +17,10 @@ interface SidebarProps {
 
 export function Sidebar({ activeItem = 'Dashboard', onNavigate }: SidebarProps) {
   return (
-    <aside className="h-full w-60 bg-white/30 backdrop-blur-xl border-r border-white/50 flex flex-col flex-shrink-0">
+    <aside className="h-full w-60 bg-white/30 backdrop-blur-xl border-r border-white/50 flex flex-col shrink-0">
       {/* Brand */}
       <div className="flex items-center gap-3 px-6 py-5 border-b border-white/30">
-        <div className="w-9 h-9 bg-white rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+        <div className="w-9 h-9 bg-white rounded-xl overflow-hidden shrink-0 shadow-sm">
           <img src="/logo.png" alt="Tembea" className="w-full h-full object-contain" />
         </div>
         <span className="font-bold text-gray-900 text-lg">Tembea</span>
