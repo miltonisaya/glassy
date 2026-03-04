@@ -1,6 +1,6 @@
 import { TrendingUp, CalendarDays, DollarSign, ListChecks, Star, MapPin, Users, Clock } from 'lucide-react'
-import { DashboardLayout } from '../components/layout/DashboardLayout'
-import { GlassCard } from '../components/ui/GlassCard'
+import { DashboardLayout } from '../components/layout'
+import { GlassCard } from '../components/ui'
 import { ACTIVITIES } from '../data/activities'
 
 const STATS = [

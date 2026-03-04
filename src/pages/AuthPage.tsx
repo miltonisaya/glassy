@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Mail, Lock, User, ArrowLeft, MapPin } from 'lucide-react'
-import { Input } from '../components/ui/Input'
+import { Input } from '../components/ui'
 
 type AuthMode = 'login' | 'register'
 type AccountType = 'traveler' | 'operator'
