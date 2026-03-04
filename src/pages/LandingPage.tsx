@@ -274,7 +274,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
       {/* ─── FOOTER ────────────────────────────────────────────────── */}
       <footer className="relative py-10 px-6 border-t border-gray-200/60">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-400">© 2026 Glassy Travel. All rights reserved.</p>
+          <p className="text-sm text-gray-400">© 2026 Tembea. All rights reserved.</p>
           <div className="flex items-center gap-6">
             {['Privacy', 'Terms', 'Contact', 'Support'].map((link) => (
               <a key={link} href="#" className="text-sm text-gray-400 hover:text-amber-600 transition-colors">

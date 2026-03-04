@@ -21,7 +21,7 @@ export function Sidebar({ activeItem = 'Dashboard', onNavigate }: SidebarProps) 
         <div className="w-9 h-9 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
           <Leaf className="text-white" size={18} />
         </div>
-        <span className="font-bold text-gray-900 text-lg">Glassy</span>
+        <span className="font-bold text-gray-900 text-lg">Tembea</span>
       </div>
 
       {/* Navigation */}
@@ -53,7 +53,7 @@ export function Sidebar({ activeItem = 'Dashboard', onNavigate }: SidebarProps) 
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm font-medium text-gray-900 truncate">John Doe</p>
-            <p className="text-xs text-gray-500 truncate">john@glassy.com</p>
+            <p className="text-xs text-gray-500 truncate">john@tembea.com</p>
           </div>
         </div>
       </div>
