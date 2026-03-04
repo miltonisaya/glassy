@@ -1,4 +1,4 @@
-import { Home, BarChart2, FileText, Settings, Users, Leaf } from 'lucide-react'
+import { Home, BarChart2, FileText, Settings, Users } from 'lucide-react'
 
 const NAV_ITEMS = [
   { icon: Home, label: 'Dashboard' },
@@ -18,8 +18,8 @@ export function Sidebar({ activeItem = 'Dashboard', onNavigate }: SidebarProps) 
     <aside className="h-full w-60 bg-white/30 backdrop-blur-xl border-r border-white/50 flex flex-col flex-shrink-0">
       {/* Brand */}
       <div className="flex items-center gap-3 px-6 py-5 border-b border-white/30">
-        <div className="w-9 h-9 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
-          <Leaf className="text-white" size={18} />
+        <div className="w-9 h-9 bg-white rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+          <img src="/logo.png" alt="Tembea" className="w-full h-full object-contain" />
         </div>
         <span className="font-bold text-gray-900 text-lg">Tembea</span>
       </div>

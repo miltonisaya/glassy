@@ -116,7 +116,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 />
               </div>
               <button
-                onClick={() => onNavigate('dashboard')}
+                onClick={() => onNavigate('auth')}
                 className="shrink-0 bg-white text-gray-900 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-gray-50 transition-colors cursor-pointer"
               >
                 Explore
@@ -160,7 +160,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           </div>
 
           <div className="text-center mt-10">
-            <Button variant="primary" withArrow onClick={() => onNavigate('dashboard')}>
+            <Button variant="primary" withArrow onClick={() => onNavigate('auth')}>
               Browse All Activities
             </Button>
           </div>
@@ -256,7 +256,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 </ul>
 
                 <button
-                  onClick={() => onNavigate('dashboard')}
+                  onClick={() => onNavigate('auth')}
                   className={`w-full py-3 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                     highlighted
                       ? 'bg-white text-amber-600 hover:bg-amber-50'

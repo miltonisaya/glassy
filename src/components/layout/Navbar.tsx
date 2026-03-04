@@ -1,4 +1,3 @@
-import { Leaf } from 'lucide-react'
 import { Button } from '../ui/Button'
 
 const NAV_LINKS = ['Explore', 'Activities', 'Destinations', 'Plans']
@@ -12,8 +11,8 @@ export function Navbar({ activeLink = 'Solutions', onNavigate }: NavbarProps) {
   return (
     <nav className="flex items-center justify-between px-8 py-5 border-b border-white/15">
       {/* Logo */}
-      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md flex-shrink-0">
-        <Leaf className="text-amber-500" size={20} />
+      <div className="w-11 h-11 bg-white rounded-full overflow-hidden shadow-md flex-shrink-0">
+        <img src="/logo.png" alt="Tembea" className="w-full h-full object-contain" />
       </div>
 
       {/* Nav links */}
@@ -31,8 +30,8 @@ export function Navbar({ activeLink = 'Solutions', onNavigate }: NavbarProps) {
       </ul>
 
       {/* CTA */}
-      <Button variant="white" withArrow onClick={() => onNavigate?.('dashboard')}>
-        Contact us
+      <Button variant="white" withArrow onClick={() => onNavigate?.('auth')}>
+        Sign In
       </Button>
     </nav>
   )
