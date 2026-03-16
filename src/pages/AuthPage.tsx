@@ -1,162 +1,18 @@
 import { useState } from 'react'
-import { Mail, Lock, User, ArrowLeft, MapPin } from 'lucide-react'
-import { Input } from '../components/ui'
+import { ArrowLeft, MapPin } from 'lucide-react'
+import { LoginForm, RegisterForm, useLoginForm, useRegisterForm } from '../modules/auth'
 
 type AuthMode = 'login' | 'register'
-type AccountType = 'traveler' | 'operator'
 
 interface AuthPageProps {
   onNavigate: (page: string) => void
 }
 
-// ─── Login Form ──────────────────────────────────────────────────────────────
-
-interface LoginFormProps {
-  onSuccess: () => void
-  onSwitch: () => void
-}
-
-function LoginForm({ onSuccess, onSwitch }: LoginFormProps) {
-  return (
-    <div className="space-y-4">
-      <Input
-        label="Email address"
-        labelClassName="text-white/80"
-        type="email"
-        placeholder="you@tembea.com"
-        icon={<Mail size={15} />}
-      />
-      <Input
-        label="Password"
-        labelClassName="text-white/80"
-        type="password"
-        placeholder="••••••••"
-        icon={<Lock size={15} />}
-      />
-
-      <div className="flex justify-end">
-        <button
-          type="button"
-          className="text-xs text-amber-400 hover:text-amber-300 transition-colors cursor-pointer"
-        >
-          Forgot password?
-        </button>
-      </div>
-
-      <button
-        type="button"
-        onClick={onSuccess}
-        className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
-      >
-        Sign In
-      </button>
-
-      <p className="text-center text-sm text-white/60">
-        Don't have an account?{' '}
-        <button
-          type="button"
-          onClick={onSwitch}
-          className="text-amber-400 hover:text-amber-300 font-medium transition-colors cursor-pointer"
-        >
-          Create one
-        </button>
-      </p>
-    </div>
-  )
-}
-
-// ─── Register Form ───────────────────────────────────────────────────────────
-
-interface RegisterFormProps {
-  onSuccess: () => void
-  onSwitch: () => void
-}
-
-function RegisterForm({ onSuccess, onSwitch }: RegisterFormProps) {
-  const [accountType, setAccountType] = useState<AccountType>('traveler')
-
-  return (
-    <div className="space-y-4">
-      <Input
-        label="Full name"
-        labelClassName="text-white/80"
-        type="text"
-        placeholder="John Doe"
-        icon={<User size={15} />}
-      />
-      <Input
-        label="Email address"
-        labelClassName="text-white/80"
-        type="email"
-        placeholder="you@tembea.com"
-        icon={<Mail size={15} />}
-      />
-      <Input
-        label="Password"
-        labelClassName="text-white/80"
-        type="password"
-        placeholder="••••••••"
-        icon={<Lock size={15} />}
-      />
-      <Input
-        label="Confirm password"
-        labelClassName="text-white/80"
-        type="password"
-        placeholder="••••••••"
-        icon={<Lock size={15} />}
-      />
-
-      {/* Account type */}
-      <div className="space-y-1.5">
-        <p className="text-sm font-medium text-white/80">I am a</p>
-        <div className="grid grid-cols-2 gap-3">
-          {([
-            { value: 'traveler', label: '🧳 Traveler', desc: 'Browse & book experiences' },
-            { value: 'operator', label: '🏕️ Operator', desc: 'List & manage activities' },
-          ] as const).map(({ value, label, desc }) => (
-            <button
-              key={value}
-              type="button"
-              onClick={() => setAccountType(value)}
-              className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
-                accountType === value
-                  ? 'bg-amber-500/25 border-amber-400/60 text-white'
-                  : 'bg-white/10 border-white/20 text-white/60 hover:bg-white/15'
-              }`}
-            >
-              <p className="text-sm font-medium">{label}</p>
-              <p className="text-[11px] mt-0.5 opacity-70">{desc}</p>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <button
-        type="button"
-        onClick={onSuccess}
-        className="w-full py-3 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
-      >
-        Create Account
-      </button>
-
-      <p className="text-center text-sm text-white/60">
-        Already have an account?{' '}
-        <button
-          type="button"
-          onClick={onSwitch}
-          className="text-amber-400 hover:text-amber-300 font-medium transition-colors cursor-pointer"
-        >
-          Sign in
-        </button>
-      </p>
-    </div>
-  )
-}
-
-// ─── Auth Page ───────────────────────────────────────────────────────────────
-
 export function AuthPage({ onNavigate }: AuthPageProps) {
   const [mode, setMode] = useState<AuthMode>('login')
+
+  const loginFormik = useLoginForm({ onSuccess: () => onNavigate('dashboard') })
+  const registerFormik = useRegisterForm({ onSuccess: () => onNavigate('dashboard') })
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 relative overflow-hidden">
@@ -220,15 +76,9 @@ export function AuthPage({ onNavigate }: AuthPageProps) {
           {/* Form */}
           <div className="px-8 py-6">
             {mode === 'login' ? (
-              <LoginForm
-                onSuccess={() => onNavigate('dashboard')}
-                onSwitch={() => setMode('register')}
-              />
+              <LoginForm formik={loginFormik} onSwitch={() => setMode('register')} />
             ) : (
-              <RegisterForm
-                onSuccess={() => onNavigate('dashboard')}
-                onSwitch={() => setMode('login')}
-              />
+              <RegisterForm formik={registerFormik} onSwitch={() => setMode('login')} />
             )}
           </div>
 
