@@ -64,7 +64,7 @@ export function RegisterForm({ formik, onSwitch }: RegisterFormProps) {
               onClick={() => formik.setFieldValue('accountType', value)}
               className={`p-3 rounded-xl border text-left transition-all cursor-pointer ${
                 formik.values.accountType === value
-                  ? 'bg-amber-500/25 border-amber-400/60 text-white'
+                  ? 'bg-forest-500/25 border-forest-400/60 text-white'
                   : 'bg-white/10 border-white/20 text-white/60 hover:bg-white/15'
               }`}
             >
@@ -78,7 +78,7 @@ export function RegisterForm({ formik, onSwitch }: RegisterFormProps) {
       <button
         type="submit"
         disabled={formik.isSubmitting}
-        className="w-full py-3 bg-amber-500 hover:bg-amber-600 disabled:opacity-60 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
+        className="w-full py-3 bg-forest-500 hover:bg-forest-600 disabled:opacity-60 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
       >
         {formik.isSubmitting ? 'Creating account…' : 'Create Account'}
       </button>
@@ -88,7 +88,7 @@ export function RegisterForm({ formik, onSwitch }: RegisterFormProps) {
         <button
           type="button"
           onClick={onSwitch}
-          className="text-amber-400 hover:text-amber-300 font-medium transition-colors cursor-pointer"
+          className="text-forest-400 hover:text-forest-300 font-medium transition-colors cursor-pointer"
         >
           Sign in
         </button>

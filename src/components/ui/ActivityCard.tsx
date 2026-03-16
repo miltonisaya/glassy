@@ -4,12 +4,12 @@ import type { Activity, ActivityCategory } from '../../data/activities'
 import { GlassCard } from './GlassCard'
 
 const CATEGORY_BADGE: Record<ActivityCategory, string> = {
-  Safari: 'bg-amber-600/80 text-white',
-  'Cultural Tour': 'bg-orange-600/80 text-white',
-  'Local Food': 'bg-red-500/80 text-white',
-  'Day Trip': 'bg-sky-600/80 text-white',
-  Beach: 'bg-teal-600/80 text-white',
-  'City Tour': 'bg-indigo-600/80 text-white',
+  Safari: 'bg-forest-600/80 text-white',
+  'Cultural Tour': 'bg-forest-500/80 text-white',
+  'Local Food': 'bg-sand-600/80 text-white',
+  'Day Trip': 'bg-forest-400/80 text-white',
+  Beach: 'bg-forest-700/80 text-white',
+  'City Tour': 'bg-sand-500/80 text-white',
 }
 
 interface ActivityCardProps {
@@ -88,7 +88,7 @@ export function ActivityCard({ activity, onBook }: ActivityCardProps) {
           </div>
           <button
             onClick={() => onBook?.(activity.id)}
-            className="px-4 py-2 bg-amber-500 text-white text-sm font-medium rounded-full hover:bg-amber-600 transition-colors cursor-pointer"
+            className="px-4 py-2 bg-forest-500 text-white text-sm font-medium rounded-full hover:bg-forest-600 transition-colors cursor-pointer"
           >
             Book Now
           </button>

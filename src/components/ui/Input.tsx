@@ -37,7 +37,7 @@ export function Input({
         <input
           type={resolvedType}
           className={`w-full bg-white/50 backdrop-blur-sm border rounded-xl py-3 text-sm text-gray-800 placeholder-gray-400 outline-none transition-all
-            focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20
+            focus:border-forest-400 focus:ring-2 focus:ring-forest-400/20
             ${error ? 'border-red-400' : 'border-white/60'}
             ${icon ? 'pl-10' : 'pl-4'}
             ${isPassword ? 'pr-10' : 'pr-4'}

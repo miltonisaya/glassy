@@ -4,8 +4,8 @@ import { GlassCard } from '../components/ui'
 import { ACTIVITIES } from '../data/activities'
 
 const STATS = [
-  { label: 'Total Bookings', value: '1,284', change: '+18%', icon: CalendarDays, color: 'text-amber-600', bg: 'bg-amber-500/10' },
-  { label: 'Active Listings', value: '24', change: '+3', icon: ListChecks, color: 'text-teal-600', bg: 'bg-teal-500/10' },
+  { label: 'Total Bookings', value: '1,284', change: '+18%', icon: CalendarDays, color: 'text-forest-600', bg: 'bg-forest-500/10' },
+  { label: 'Active Listings', value: '24', change: '+3', icon: ListChecks, color: 'text-forest-700', bg: 'bg-forest-600/10' },
   { label: 'Monthly Revenue', value: '$8,420', change: '+24%', icon: DollarSign, color: 'text-emerald-600', bg: 'bg-emerald-500/10' },
   { label: 'Avg. Growth', value: '18.5%', change: '+3%', icon: TrendingUp, color: 'text-sky-600', bg: 'bg-sky-500/10' },
 ]
@@ -20,7 +20,7 @@ const RECENT_BOOKINGS = [
 
 const STATUS_STYLES = {
   Confirmed: 'bg-emerald-500/15 text-emerald-700',
-  Pending: 'bg-amber-500/15 text-amber-700',
+  Pending: 'bg-sand-400/20 text-sand-700',
 }
 
 export function DashboardPage() {
@@ -64,7 +64,7 @@ export function DashboardPage() {
                   <tr key={name} className="hover:bg-white/30 transition-colors">
                     <td className="py-3">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-7 h-7 bg-amber-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0">
+                        <div className="w-7 h-7 bg-forest-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold shrink-0">
                           {avatar}
                         </div>
                         <span className="font-medium text-gray-800 whitespace-nowrap">{name}</span>
@@ -119,7 +119,7 @@ export function DashboardPage() {
           </ul>
 
           <button
-            className="mt-5 w-full flex items-center justify-center gap-2 py-2.5 border border-amber-300/60 rounded-xl text-sm text-amber-700 hover:bg-amber-50/50 transition-all cursor-pointer"
+            className="mt-5 w-full flex items-center justify-center gap-2 py-2.5 border border-forest-300/60 rounded-xl text-sm text-forest-700 hover:bg-forest-50/50 transition-all cursor-pointer"
             onClick={() => {}}
           >
             <Users size={15} />

@@ -29,12 +29,12 @@ export function Toolbar({ title = 'Dashboard', subtitle = 'Welcome back, John' }
         {/* Notifications */}
         <button className="relative w-9 h-9 bg-white/50 border border-white/60 rounded-xl flex items-center justify-center hover:bg-white/70 transition-all cursor-pointer">
           <Bell size={16} className="text-gray-600" />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-amber-500 rounded-full" />
+          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-forest-500 rounded-full" />
         </button>
 
         {/* Profile */}
         <button className="flex items-center gap-2 bg-white/50 border border-white/60 rounded-xl px-3 py-2 hover:bg-white/70 transition-all cursor-pointer">
-          <div className="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">
+          <div className="w-6 h-6 bg-forest-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0">
             JD
           </div>
           <ChevronDown size={14} className="text-gray-500" />

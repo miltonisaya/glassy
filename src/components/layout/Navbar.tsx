@@ -23,7 +23,7 @@ export function Navbar({ activeLink = 'Solutions', onNavigate }: NavbarProps) {
               {link}
             </button>
             {link === activeLink && (
-              <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-amber-400 rounded-full" />
+              <span className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-forest-400 rounded-full" />
             )}
           </li>
         ))}

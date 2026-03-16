@@ -18,10 +18,10 @@ export function AuthPage({ onNavigate }: AuthPageProps) {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6 relative overflow-hidden">
       {/* Background — same blobs as landing page */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-linear-to-br from-amber-600/45 via-orange-500/30 to-teal-700/40" />
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-125 bg-amber-400/25 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-0 w-72 h-72 bg-orange-400/20 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-linear-to-br from-forest-700/45 via-forest-500/30 to-forest-800/40" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-125 bg-forest-400/25 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-forest-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-72 h-72 bg-sand-400/20 rounded-full blur-3xl" />
       </div>
 
       <div className="relative w-full max-w-md">

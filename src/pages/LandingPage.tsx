@@ -65,13 +65,13 @@ const PLANS = [
 
 export function LandingPage({ onNavigate }: LandingPageProps) {
   return (
-    <div className="min-h-screen bg-gray-100 relative">
+    <div className="min-h-screen bg-sand-50 relative">
       {/* Fixed background blobs — visible through all sections */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-linear-to-br from-amber-600/45 via-orange-500/30 to-teal-700/40" />
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-125 bg-amber-400/25 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-0 w-72 h-72 bg-orange-400/20 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-linear-to-br from-forest-700/45 via-forest-500/30 to-forest-800/40" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-175 h-125 bg-forest-400/25 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-forest-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 right-0 w-72 h-72 bg-sand-400/20 rounded-full blur-3xl" />
       </div>
 
       {/* ─── HERO ──────────────────────────────────────────────────── */}
@@ -177,7 +177,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 key={label}
                 className="bg-white/40 backdrop-blur-xl border border-white/60 rounded-2xl p-5 flex flex-col items-center gap-2 hover:bg-white/60 cursor-pointer transition-all group"
               >
-                <Icon size={26} className="text-amber-500 group-hover:text-amber-600 transition-colors" />
+                <Icon size={26} className="text-forest-500 group-hover:text-forest-600 transition-colors" />
                 <span className="text-xs font-medium text-gray-700 text-center leading-tight">{label}</span>
               </button>
             ))}
@@ -196,7 +196,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 {i < HOW_IT_WORKS.length - 1 && (
                   <div className="hidden md:block absolute top-6 left-[calc(50%+28px)] right-[-calc(50%-28px)] h-px bg-gray-300/60" />
                 )}
-                <div className="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">
+                <div className="w-12 h-12 bg-forest-500 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-4">
                   {step}
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
@@ -221,7 +221,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 key={name}
                 className={`rounded-2xl p-6 flex flex-col gap-4 border transition-all ${
                   highlighted
-                    ? 'bg-linear-to-br from-amber-500 to-orange-600 text-white border-amber-400 shadow-2xl scale-[1.02]'
+                    ? 'bg-linear-to-br from-forest-500 to-forest-700 text-white border-forest-400 shadow-2xl scale-[1.02]'
                     : 'bg-white/40 backdrop-blur-xl border-white/60'
                 }`}
               >
@@ -247,7 +247,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 <ul className="space-y-2.5 flex-1">
                   {features.map((f) => (
                     <li key={f} className="flex items-start gap-2 text-sm">
-                      <span className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-[10px] shrink-0 ${highlighted ? 'bg-white/25 text-white' : 'bg-amber-100 text-amber-700'}`}>
+                      <span className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center text-[10px] shrink-0 ${highlighted ? 'bg-white/25 text-white' : 'bg-forest-100 text-forest-700'}`}>
                         ✓
                       </span>
                       <span className={highlighted ? 'text-gray-300' : 'text-gray-600'}>{f}</span>
@@ -259,8 +259,8 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                   onClick={() => onNavigate('auth')}
                   className={`w-full py-3 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                     highlighted
-                      ? 'bg-white text-amber-600 hover:bg-amber-50'
-                      : 'bg-amber-500 text-white hover:bg-amber-600'
+                      ? 'bg-white text-forest-600 hover:bg-forest-50'
+                      : 'bg-forest-500 text-white hover:bg-forest-600'
                   }`}
                 >
                   {cta}
@@ -277,7 +277,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           <p className="text-sm text-gray-400">© 2026 Tembea. All rights reserved.</p>
           <div className="flex items-center gap-6">
             {['Privacy', 'Terms', 'Contact', 'Support'].map((link) => (
-              <a key={link} href="#" className="text-sm text-gray-400 hover:text-amber-600 transition-colors">
+              <a key={link} href="#" className="text-sm text-gray-400 hover:text-forest-600 transition-colors">
                 {link}
               </a>
             ))}

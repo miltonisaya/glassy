@@ -33,7 +33,7 @@ export function LoginForm({ formik, onSwitch }: LoginFormProps) {
       <button
         type="submit"
         disabled={formik.isSubmitting}
-        className="w-full py-3 bg-amber-500 hover:bg-amber-600 disabled:opacity-60 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
+        className="w-full py-3 bg-forest-500 hover:bg-forest-600 disabled:opacity-60 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
       >
         {formik.isSubmitting ? 'Signing in…' : 'Sign In'}
       </button>
@@ -43,7 +43,7 @@ export function LoginForm({ formik, onSwitch }: LoginFormProps) {
         <button
           type="button"
           onClick={onSwitch}
-          className="text-amber-400 hover:text-amber-300 font-medium transition-colors cursor-pointer"
+          className="text-forest-400 hover:text-forest-300 font-medium transition-colors cursor-pointer"
         >
           Register
         </button>
