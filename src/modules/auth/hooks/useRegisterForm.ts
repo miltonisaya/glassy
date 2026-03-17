@@ -1,7 +1,7 @@
 import { useFormik } from 'formik'
 import { registerUserSchema } from '../schemas/registerUserSchema.ts'
 import { authService } from '../auth.service'
-import { AccountTypeEnum } from '../types'
+import {AccountTypeEnum, SexEnum} from '../types'
 import type { RegisterPayload } from '../types'
 
 interface UseRegisterFormOptions {
@@ -11,11 +11,16 @@ interface UseRegisterFormOptions {
 export function useRegisterForm({ onSuccess }: UseRegisterFormOptions) {
   return useFormik<RegisterPayload>({
     initialValues: {
-      fullName: '',
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      sex: SexEnum,
+      dateOfBirth: '',
+      mobile: '',
       email: '',
       password: '',
       confirmPassword: '',
-      accountType: AccountTypeEnum.TRAVELLER,
+      accountType: AccountTypeEnum,
     },
     validationSchema: registerUserSchema,
     onSubmit: async (values, { setSubmitting, setFieldError }) => {

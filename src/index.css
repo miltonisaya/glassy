@@ -3,29 +3,29 @@
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Travel green */
-  --color-forest-50:  #f0f8f5;
-  --color-forest-100: #d5ece4;
-  --color-forest-200: #aad9c8;
-  --color-forest-300: #74bda8;
-  --color-forest-400: #3f9d83;
-  --color-forest-500: #2d7a5f;
-  --color-forest-600: #1f5d47;
-  --color-forest-700: #164433;
-  --color-forest-800: #0e2d22;
-  --color-forest-900: #071712;
+  /* Teal green (primary) */
+  --color-forest-50:  #e8f5f3;
+  --color-forest-100: #c5e6e1;
+  --color-forest-200: #8fcec7;
+  --color-forest-300: #4fb0a5;
+  --color-forest-400: #1f9085;
+  --color-forest-500: #197a6e;
+  --color-forest-600: #136459;
+  --color-forest-700: #0e4d45;
+  --color-forest-800: #093630;
+  --color-forest-900: #0d2e2b;
 
-  /* Beige / sand */
-  --color-sand-50:  #fdf9f2;
-  --color-sand-100: #f8f0e0;
-  --color-sand-200: #f0e0c0;
-  --color-sand-300: #e6cb98;
-  --color-sand-400: #d9b272;
-  --color-sand-500: #c99a52;
-  --color-sand-600: #a67c38;
-  --color-sand-700: #7d5c27;
-  --color-sand-800: #533c18;
-  --color-sand-900: #2a1e0c;
+  /* Light gray / off-white (backgrounds) */
+  --color-sand-50:  #f5f7f7;
+  --color-sand-100: #eaeeed;
+  --color-sand-200: #d4dcdb;
+  --color-sand-300: #b0bfbd;
+  --color-sand-400: #8a9e9b;
+  --color-sand-500: #6b7f7d;
+  --color-sand-600: #536362;
+  --color-sand-700: #3e4b4a;
+  --color-sand-800: #2a3332;
+  --color-sand-900: #161c1c;
 }
 
 *, *::before, *::after {

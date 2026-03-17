@@ -3,7 +3,13 @@ export const AccountTypeEnum = {
   OPERATOR: 'operator',
 } as const
 
+export const SexEnum = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+} as const
+
 export type AccountTypeEnum = typeof AccountTypeEnum[keyof typeof AccountTypeEnum]
+export type SexEnum = typeof SexEnum[keyof typeof SexEnum]
 
 export interface LoginPayload {
   email: string
@@ -11,7 +17,12 @@ export interface LoginPayload {
 }
 
 export interface RegisterPayload {
-  fullName: string
+  firstName: string
+  middleName: string
+  lastName: string
+  sex: SexEnum
+  dateOfBirth: string
+  mobile: string
   email: string
   password: string
   confirmPassword: string

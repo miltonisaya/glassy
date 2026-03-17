@@ -1,5 +1,5 @@
 import type { FormikProps } from 'formik'
-import { Mail, Lock, User } from 'lucide-react'
+import { Mail, Lock, User, Calendar, Phone } from 'lucide-react'
 import { Input } from '../../../components/ui'
 import { AccountTypeEnum } from '../types'
 import type { RegisterPayload } from '../types'
@@ -17,42 +17,131 @@ const ACCOUNT_TYPES: { value: AccountTypeEnum; label: string; desc: string }[] =
 export function RegisterForm({ formik, onSwitch }: RegisterFormProps) {
   return (
     <form onSubmit={formik.handleSubmit} noValidate className="space-y-4">
+      {/* Name row */}
+      <div className="grid grid-cols-2 gap-3">
+        <Input
+          label="First Name"
+          labelClassName="text-white/80"
+          type="text"
+          placeholder="First name"
+          icon={<User size={15} />}
+          error={formik.touched.firstName ? formik.errors.firstName : undefined}
+          {...formik.getFieldProps('firstName')}
+        />
+        <Input
+          label="Middle Name"
+          labelClassName="text-white/80"
+          type="text"
+          placeholder="Middle name"
+          icon={<User size={15} />}
+          error={formik.touched.middleName ? formik.errors.middleName : undefined}
+          {...formik.getFieldProps('middleName')}
+        />
+      </div>
+
+      {/* Last name + Email row */}
+      <div className="grid grid-cols-2 gap-3">
+        <Input
+          label="Last Name"
+          labelClassName="text-white/80"
+          type="text"
+          placeholder="Last name"
+          icon={<User size={15} />}
+          error={formik.touched.lastName ? formik.errors.lastName : undefined}
+          {...formik.getFieldProps('lastName')}
+        />
+        <Input
+          label="Email address"
+          labelClassName="text-white/80"
+          type="email"
+          placeholder="you@tembea.com"
+          icon={<Mail size={15} />}
+          error={formik.touched.email ? formik.errors.email : undefined}
+          {...formik.getFieldProps('email')}
+        />
+      </div>
+
+      {/* Mobile row */}
       <Input
-        label="Full name"
+        label="Mobile number"
         labelClassName="text-white/80"
-        type="text"
-        placeholder="Your full name"
-        icon={<User size={15} />}
-        error={formik.touched.fullName ? formik.errors.fullName : undefined}
-        {...formik.getFieldProps('fullName')}
+        type="tel"
+        placeholder="0712 345 678"
+        icon={<Phone size={15} />}
+        error={formik.touched.mobile ? formik.errors.mobile : undefined}
+        {...formik.getFieldProps('mobile')}
       />
-      <Input
-        label="Email address"
-        labelClassName="text-white/80"
-        type="email"
-        placeholder="you@tembea.com"
-        icon={<Mail size={15} />}
-        error={formik.touched.email ? formik.errors.email : undefined}
-        {...formik.getFieldProps('email')}
-      />
-      <Input
-        label="Password"
-        labelClassName="text-white/80"
-        type="password"
-        placeholder="••••••••"
-        icon={<Lock size={15} />}
-        error={formik.touched.password ? formik.errors.password : undefined}
-        {...formik.getFieldProps('password')}
-      />
-      <Input
-        label="Confirm password"
-        labelClassName="text-white/80"
-        type="password"
-        placeholder="••••••••"
-        icon={<Lock size={15} />}
-        error={formik.touched.confirmPassword ? formik.errors.confirmPassword : undefined}
-        {...formik.getFieldProps('confirmPassword')}
-      />
+
+      {/* Sex + Date of Birth row */}
+      <div className="grid grid-cols-2 gap-3">
+        <div className="space-y-1.5">
+          <p className="text-sm font-medium text-white/80">Sex</p>
+          <div
+            onBlur={() => formik.setFieldTouched('sex', true)}
+            className={`flex gap-4 h-[42px] items-center px-3 bg-white/50 backdrop-blur-sm border rounded-xl ${
+              formik.touched.sex && formik.errors.sex ? 'border-red-400' : 'border-white/60'
+            }`}
+          >
+            {['Male', 'Female'].map((option) => (
+              <label key={option} className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="sex"
+                  value={option}
+                  checked={formik.values.sex === option}
+                  onChange={() => formik.setFieldValue('sex', option)}
+                  className="accent-forest-500 w-3.5 h-3.5"
+                />
+                <span className="text-sm text-gray-700">{option}</span>
+              </label>
+            ))}
+          </div>
+          {formik.touched.sex && formik.errors.sex && (
+            <p className="text-xs text-red-500">{formik.errors.sex}</p>
+          )}
+        </div>
+
+        <div className="space-y-1.5">
+          <p className="text-sm font-medium text-white/80">Date of Birth</p>
+          <div className="relative">
+            <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+              <Calendar size={15} />
+            </span>
+            <input
+              type="date"
+              {...formik.getFieldProps('dateOfBirth')}
+              className={`w-full bg-white/50 backdrop-blur-sm border rounded-xl py-3 pl-10 pr-4 text-sm text-gray-800 outline-none transition-all
+                focus:border-forest-400 focus:ring-2 focus:ring-forest-400/20
+                ${formik.touched.dateOfBirth && formik.errors.dateOfBirth ? 'border-red-400' : 'border-white/60'}`}
+            />
+          </div>
+          {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
+            <p className="text-xs text-red-500">{formik.errors.dateOfBirth}</p>
+          )}
+        </div>
+      </div>
+
+      {/* Password row */}
+      <div className="grid grid-cols-2 gap-3">
+        <Input
+          label="Password"
+          labelClassName="text-white/80"
+          type="password"
+          placeholder="••••••••"
+          icon={<Lock size={15} />}
+          error={formik.touched.password ? formik.errors.password : undefined}
+          {...formik.getFieldProps('password')}
+        />
+        <Input
+          label="Confirm password"
+          labelClassName="text-white/80"
+          type="password"
+          placeholder="••••••••"
+          icon={<Lock size={15} />}
+          error={formik.touched.confirmPassword ? formik.errors.confirmPassword : undefined}
+          {...formik.getFieldProps('confirmPassword')}
+        />
+      </div>
 
       <div className="space-y-1.5">
         <p className="text-sm font-medium text-white/80">I am a</p>

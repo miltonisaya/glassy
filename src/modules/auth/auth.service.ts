@@ -10,6 +10,7 @@ export const authService = {
 
   async register(payload: Omit<RegisterPayload, 'confirmPassword'>): Promise<AuthResponse> {
     const { data } = await apiClient.post<AuthResponse>('/api/v1/users/register', payload)
+    console.log("The url =>",data);
     // localStorage.setItem('access_token', data.accessToken)
     return data
   },
